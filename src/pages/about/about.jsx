@@ -1,9 +1,9 @@
-import { Why } from 'widgets/home-sections/why/why';
-import { Stats } from 'widgets/home-sections/stats/stats';
-import { Team } from 'widgets/home-sections/team/team';
-import { Testimonials } from 'widgets/home-sections/testimonials/testimonials';
-import { Newsletter } from 'widgets/newsletter';
-import { IMAGES } from 'shared/config/images';
+import { Why } from '../../widgets/home-sections/why/why';
+import { Stats } from '../../widgets/home-sections/stats/stats';
+import { Team } from '../../widgets/home-sections/team/team';
+import { Testimonials } from '../../widgets/home-sections/testimonials/testimonials';
+import { Newsletter } from '../../widgets/newsletter';
+import { IMAGES } from '../../shared/config/images';
 export const AboutPage = () => (
   <div className="pageFadeIn">
     <section style={{ padding: '80px 0', background: '#FEDCD9' }}>

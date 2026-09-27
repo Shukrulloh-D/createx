@@ -1,19 +1,70 @@
-const ph = (label, w = 400, h = 300) => `https://placehold.co/${w}x${h}/F4F5F6/787A80?text=${encodeURIComponent(label)}&font=lato`;
+// ВСЕ КАРТИНКИ ПРОЕКТА — меняется только тут
+const img = (name) => `/images/${name}`;
+
 export const IMAGES = {
-  heroIllustration: ph('Hero+Illustration', 600, 550),
-  whyImage: ph('About+Image', 705, 560),
-  course1: ph('Course+1', 390, 240), course2: ph('Course+2', 390, 240), course3: ph('Course+3', 390, 240),
-  course4: ph('Course+4', 390, 240), course5: ph('Course+5', 390, 240), course6: ph('Course+6', 390, 240),
-  approachIllustration: ph('Approach', 550, 500),
-  certificate: ph('Certificate', 705, 500),
-  team1: ph('Team+1', 285, 340), team2: ph('Team+2', 285, 340), team3: ph('Team+3', 285, 340), team4: ph('Team+4', 285, 340),
-  team5: ph('Team+5', 285, 340), team6: ph('Team+6', 285, 340), team7: ph('Team+7', 285, 340), team8: ph('Team+8', 285, 340),
-  post1: ph('Post+1', 390, 300), post2: ph('Post+2', 390, 300), post3: ph('Post+3', 390, 300),
-  post4: ph('Post+4', 390, 300), post5: ph('Post+5', 390, 300), post6: ph('Post+6', 390, 300),
-  blogSingle: ph('Blog+Single', 810, 360),
-  newsletterIllustration: ph('Newsletter', 400, 400),
-  mapImage: ph('Map', 705, 412),
-  courseHero: ph('Course+Hero', 458, 600),
-  courseProgram: ph('Program', 550, 500),
-  author: ph('Author', 100, 100),
+  logo: '/logo.svg',
+
+  // Hero (главная)
+  hero: img('hero.png'),
+  playButton: img('play-button.png'),
+
+  // Why Createx
+  why: img('why.png'),
+
+  // Featured Courses (6)
+  course1: img('course-1.png'),
+  course2: img('course-2.png'),
+  course3: img('course-3.png'),
+  course4: img('course-4.png'),
+  course5: img('course-5.png'),
+  course6: img('course-6.png'),
+
+  // Approach illustration
+  approach: img('approach.png'),
+
+  // Certificate
+  certificate: img('certificate.png'),
+
+  // Team (8)
+  team1: img('team-1.png'),
+  team2: img('team-2.png'),
+  team3: img('team-3.png'),
+  team4: img('team-4.png'),
+  team5: img('team-5.png'),
+  team6: img('team-6.png'),
+  team7: img('team-7.png'),
+  team8: img('team-8.png'),
+
+  // Benefit icons
+  iconStructure: img('ic-structure.png'),
+  iconChat: img('ic-chat.png'),
+  iconTarget: img('ic-target.png'),
+  iconCalendar: img('ic-calendar.png'),
+
+  // Contacts map
+  map: img('map.png'),
+
+  // Blog / Posts
+  blog1: img('blog-1.png'),
+  blog2: img('blog-2.png'),
+  blog3: img('blog-3.png'),
+  blog4: img('blog-4.png'),
+  blog5: img('blog-5.png'),
+  blog6: img('blog-6.png'),
+
+  // Avatars
+  avatar1: img('avatar-1.png'),
+  avatar2: img('avatar-2.png'),
+  avatar3: img('avatar-3.png'),
+  avatar4: img('avatar-4.png'),
+  curator: img('curator.png'),
+  testimonialAvatar: img('testimonial-avatar.png'),
+
+  // Newsletter
+  newsletterIllustration: img('illustration.png'),
+
+  // Course page
+  courseHero: img('course-4.png'),
+
+  whyImage: img("about.png")
 };

@@ -1,34 +1,60 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from 'shared/lib/auth';
-const headerStyle = { background: 'white', borderBottom: '1px solid #E5E8ED', position: 'sticky', top: 0, zIndex: 100 };
-const innerStyle = { maxWidth: 1230, margin: '0 auto', padding: '0 15px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: 90 };
-const logoStyle = { fontFamily: 'Lato', fontSize: 24, fontWeight: 900, letterSpacing: '-0.5px' };
-const navStyle = { display: 'flex', gap: 28, fontSize: 15, fontWeight: 500 };
-const btnStyle = { display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', borderRadius: 4, fontWeight: 700, fontSize: 13, textTransform: 'uppercase', background: 'linear-gradient(55deg, #FF3F3A 0%, #F75E05 100%)', color: 'white', letterSpacing: '0.5px' };
+
+const styles = {
+  header: { background: 'white', borderBottom: '1px solid #E5E8ED', position: 'sticky', top: 0, zIndex: 100 },
+  inner: { maxWidth: 1230, margin: '0 auto', padding: '0 15px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: 90 },
+  logo: { display: 'flex', alignItems: 'center' },
+  logoImg: { height: 30 },
+  nav: { display: 'flex', gap: 28, fontSize: 15, fontWeight: 500 },
+  actions: { display: 'flex', gap: 16, alignItems: 'center' },
+  authBtn: { fontSize: 14, fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', color: '#1E212C' },
+  logoutBtn: { fontSize: 13, color: '#787A80', background: 'none', border: 'none', cursor: 'pointer' },
+};
+
+const NAV = [
+  { to: '/about', label: 'About Us' },
+  { to: '/courses', label: 'Courses' },
+  { to: '/events', label: 'Events' },
+  { to: '/blog', label: 'Blog' },
+  { to: '/contacts', label: 'Contacts' },
+];
 
 export const Header = ({ onOpenAuth }) => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
-  const navItems = [['/about', 'About Us'], ['/courses', 'Courses'], ['/events', 'Events'], ['/blog', 'Blog'], ['/contacts', 'Contacts']];
+
   return (
-    <header style={headerStyle}>
-      <div style={innerStyle}>
-        <Link to="/" style={logoStyle}>CREATE<span style={{ color: '#FF3F3A' }}>X</span></Link>
-        <nav style={navStyle}>
-          {navItems.map(([to, label]) => (
-            <NavLink key={to} to={to} style={({ isActive }) => ({ color: isActive ? '#FF3F3A' : '#1E212C', padding: '6px 0' })}>{label}</NavLink>
+    <header style={styles.header}>
+      <div style={styles.inner}>
+        <Link to="/" style={styles.logo}>
+          <img src="/logo.svg" alt="Createx" style={styles.logoImg} />
+        </Link>
+
+        <nav style={styles.nav}>
+          {NAV.map(item => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              style={({ isActive }) => ({ color: isActive ? '#FF3F3A' : '#1E212C' })}
+            >
+              {item.label}
+            </NavLink>
           ))}
         </nav>
-        <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
-          <button style={btnStyle} onClick={() => navigate('/contacts')}>Get consultation</button>
+
+        <div style={styles.actions}>
+          <button className="btn btn-primary" onClick={() => navigate('/contacts')}>
+            Get consultation
+          </button>
           {user ? (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <span style={{ fontSize: 14, fontWeight: 600 }}>👤 {user.name}</span>
-              <button onClick={logout} style={{ fontSize: 13, color: '#787A80' }}>Logout</button>
-            </div>
+            <>
+              <span style={{ fontSize: 14, fontWeight: 600 }}>{user.name || 'User'}</span>
+              <button style={styles.logoutBtn} onClick={logout}>Logout</button>
+            </>
           ) : (
-            <button onClick={() => onOpenAuth('login')} style={{ fontSize: 14, fontWeight: 500, display: 'flex', alignItems: 'center', gap: 6 }}>
-              👤 Log in / Register
+            <button style={styles.authBtn} onClick={() => onOpenAuth('login')}>
+              Log in / Register
             </button>
           )}
         </div>

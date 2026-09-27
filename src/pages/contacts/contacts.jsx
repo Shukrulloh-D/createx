@@ -20,7 +20,7 @@ export const ContactsPage = () => {
             <div><div style={{ fontSize: 12, color: '#787A80', fontWeight: 700, textTransform: 'uppercase' }}>Address</div><div>2464 Royal Ln. Mesa, New Jersey 45463, USA</div></div>
           </div>
           <div style={{ display: 'flex', gap: 16, marginBottom: 40 }}>{['f','t','in','ig','yt'].map(s => <a key={s} href="/" style={{ color: '#787A80' }}>{s}</a>)}</div>
-          <img src={IMAGES.mapImage} alt="Map" style={{ width: '100%', borderRadius: 8 }} />
+          <img src={IMAGES.map} alt="Map" style={{ width: '100%', borderRadius: 8 }} />
         </div>
         <div>
           <h2 style={{ fontSize: 28, fontWeight: 900, marginBottom: 24 }}>Drop us a line</h2>

@@ -1,7 +1,7 @@
 import { IMAGES } from 'shared/config/images';
 export const Certificate = () => (
   <section style={{ padding: '80px 0' }}>
-    <div style={{ maxWidth: 1230, margin: '0 auto', padding: '0 15px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+    <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
       <div>
         <div className="section-eyebrow">Createx Certificate</div>
         <h2 className="section-title" style={{ marginBottom: 24 }}>Your expertise will be confirmed</h2>

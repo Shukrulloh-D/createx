@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { useToast } from 'shared/lib/toast';
+import { useToast } from '../../shared/lib/toast';
 const fs = { background: '#1E212C', color: 'rgba(255,255,255,0.7)', marginTop: 80 };
 const topStyle = { maxWidth: 1230, margin: '0 auto', padding: '60px 15px', display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1.5fr', gap: 40 };
 const colH = { color: 'white', fontSize: 14, fontWeight: 700, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.5px' };

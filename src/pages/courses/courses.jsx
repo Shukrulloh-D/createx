@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CourseCard } from 'entities/course';
+import { CourseCard } from '../../entities/course';
 import { COURSES, CATEGORIES } from 'shared/api/mocks';
 import { Newsletter } from 'widgets/newsletter';
 import { SearchIcon } from 'shared/ui/icon';
